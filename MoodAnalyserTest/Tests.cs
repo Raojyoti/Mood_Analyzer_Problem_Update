@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mood_AnalyzerProblems;
 
@@ -7,7 +8,8 @@ namespace MoodAnalyserTest
     public class Tests
     {
         [TestMethod]
-        public void GivenMessage_WhenAnalyzer_ShouldReturnSadMood()
+
+        public void GivenSadMessage_WhenAnalyzer_ShouldReturnSadMood()
         {
             //Arrange
             string message = "I am in Sad Mood";
@@ -22,6 +24,17 @@ namespace MoodAnalyserTest
         {
             //Arrange
             string message = "I am in Any Mood";
+            //Act
+            MoodAnalyzer analyser = new MoodAnalyzer(message);
+            string actual = analyser.AnalyserMood();
+            //Assert
+            Assert.AreEqual(actual, "Happy");
+        }
+        [TestMethod]
+        public void GivenNullMood_WhenAnalyzer_ShouldReturnHappyMood()
+        {
+            //Arrange
+            string message=null;
             //Act
             MoodAnalyzer analyser = new MoodAnalyzer(message);
             string actual = analyser.AnalyserMood();
