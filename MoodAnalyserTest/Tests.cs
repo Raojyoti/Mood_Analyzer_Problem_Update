@@ -10,7 +10,7 @@ namespace MoodAnalyserTest
         public void GivenMessage_WhenAnalyzer_ShouldReturnSadMood()
         {
             //Arrange
-            string message = "Iam in Sad Mood";
+            string message = "I am in Sad Mood";
             //Act
             MoodAnalyzer analyser = new MoodAnalyzer();
             string actual = analyser.AnalyserMood(message);
