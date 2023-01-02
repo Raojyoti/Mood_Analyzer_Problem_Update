@@ -12,8 +12,8 @@ namespace MoodAnalyserTest
             //Arrange
             string message = "I am in Sad Mood";
             //Act
-            MoodAnalyzer analyser = new MoodAnalyzer();
-            string actual = analyser.AnalyserMood(message);
+            MoodAnalyzer analyser = new MoodAnalyzer(message);
+            string actual = analyser.AnalyserMood();
             //Assert
             Assert.AreEqual(actual, "Sad");
         }
@@ -23,8 +23,8 @@ namespace MoodAnalyserTest
             //Arrange
             string message = "I am in Any Mood";
             //Act
-            MoodAnalyzer analyser = new MoodAnalyzer();
-            string actual = analyser.AnalyserMood(message);
+            MoodAnalyzer analyser = new MoodAnalyzer(message);
+            string actual = analyser.AnalyserMood();
             //Assert
             Assert.AreEqual(actual, "Happy");
         }
